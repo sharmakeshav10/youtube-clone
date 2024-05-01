@@ -4,12 +4,23 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../utils/slices/appSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const sideBarMenuToggleHandler = () => {
+    dispatch(toggleMenu());
+  };
   return (
     <div className="grid grid-flow-col shadow-lg px-4 py-3">
       <div className="flex col-span-2">
-        <FontAwesomeIcon icon={faBars} />
+        <FontAwesomeIcon
+          icon={faBars}
+          onClick={sideBarMenuToggleHandler}
+          className="cursor-pointer"
+        />
         <img
           className="h-9 mx-3"
           src="https://t3.ftcdn.net/jpg/05/07/46/84/360_F_507468479_HfrpT7CIoYTBZSGRQi7RcWgo98wo3vb7.jpg"

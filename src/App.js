@@ -1,14 +1,20 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Header from "./Header";
-import Body from "./Body";
+
+import { Provider } from "react-redux";
+import appStore from "./utils/store/appStore";
+import Header from "./components/Header";
+import Body from "./components/Body";
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Body />
-    </div>
+    <>
+      <Provider store={appStore}>
+        <div>
+          <Header />
+          <Body />
+        </div>
+      </Provider>
+    </>
   );
 }
 

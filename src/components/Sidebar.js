@@ -1,4 +1,9 @@
+import { useSelector } from "react-redux";
+
 const SideBar = () => {
+  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
+  if (!isMenuOpen) return null;
+
   return (
     <div className="col-span-1 border border-black p-4">
       <ul>
