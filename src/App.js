@@ -3,7 +3,10 @@ import "./App.css";
 import { Provider } from "react-redux";
 import appStore from "./utils/store/appStore";
 import Header from "./components/Header";
-import Body from "./components/Body";
+
+import { RouterProvider } from "react-router-dom";
+
+import { appRouter } from "./utils/routes";
 
 function App() {
   return (
@@ -11,7 +14,7 @@ function App() {
       <Provider store={appStore}>
         <div>
           <Header />
-          <Body />
+          <RouterProvider router={appRouter} />
         </div>
       </Provider>
     </>
